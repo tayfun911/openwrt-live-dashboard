@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# Local configuration overrides
+config.local.json
+
+# Deployment artefacts
+*.tar.gz
+*.tar
+
+# Ad-hoc renders written to the repository root.
+# Curated README images live in docs/ and ARE committed.
+/*.svg
+/*.png

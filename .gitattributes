@@ -1,0 +1,18 @@
+# Line ending policy.
+#
+# This project ships shell scripts to OpenWrt, where a CRLF shebang makes the
+# init script fail with a ".common" error. Force LF everywhere so a clone on
+# Windows behaves exactly like the source tree.
+* text=auto eol=lf
+
+# Binary assets must never be rewritten.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+
+# Keep the generated README screenshots diffable.
+*.svg text

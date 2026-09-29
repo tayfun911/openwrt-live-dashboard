@@ -1,0 +1,91 @@
+/* ============================================================
+   OpenWrt Live Dashboard — Neon Cyber TCSS
+   ============================================================ */
+
+Screen {
+    background: #000a10;
+    padding-top: 1;
+}
+
+/* ---------- Üst bilgi ---------- */
+#header {
+    height: 5;
+    background: #01141c;
+    border: none;
+    border-bottom: solid $secondary;
+    padding: 0 1;
+    color: #FFD700;
+}
+
+.logo {
+    width: 31;
+}
+
+.header-status {
+    width: 1fr;
+    padding-left: 1;
+}
+
+/* ---------- Ana düzen (7" ekran: 2 geniş sütun) ---------- */
+#main-row {
+    height: 1fr;
+}
+
+#left-col {
+    width: 1.5fr;
+}
+
+#right-col {
+    width: 1fr;
+}
+
+/* ---------- Paneller ---------- */
+.panel {
+    border: solid #FF00FF;
+    border-title-color: #FF00FF;
+    background: #01141c;
+    color: #FFD700;
+    padding: 0 1;
+    margin: 0 1 0 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+}
+
+#cpu-panel,
+#memory-panel,
+#disk-panel,
+#temperature-panel,
+#network-panel,
+#firewall-panel,
+#vpn-panel,
+#docker-panel,
+#clients-panel,
+#logs-panel,
+#graph-panel {
+    height: auto;
+}
+
+/* ---------- Alt bilgi ---------- */
+Footer {
+    background: #01141c;
+    color: #7fffe0;
+}
+
+/* ---------- Yardım modal ---------- */
+#help-dialog {
+    width: 80;
+    height: 36;
+    border: solid $secondary;
+    background: #01141c;
+    padding: 1 2;
+}
+
+#help-dialog Static {
+    height: 1fr;
+}
+
+#help-close {
+    margin-top: 1;
+    width: 16;
+}

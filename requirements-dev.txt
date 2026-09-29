@@ -1,0 +1,13 @@
+# Development / tooling dependencies (optional).
+#
+# Needed only to regenerate the README screenshots with
+# `python tools/make_screenshots.py`.
+#
+#   pip install -r requirements.txt -r requirements-dev.txt
+-r requirements.txt
+
+pillow>=10.0
+
+# Test/dev helpers (drop these in if you want them):
+# pytest>=8.0
+# eslint-ish tools are not needed; this is a pure Python project.

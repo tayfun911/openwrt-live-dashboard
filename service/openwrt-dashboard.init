@@ -1,0 +1,37 @@
+#!/bin/sh /etc/rc.common
+# OpenWrt Live Dashboard — procd servisi
+#
+# Kurulum:
+#   cp service/openwrt-dashboard.init /etc/init.d/openwrt-dashboard
+#   chmod +x /etc/init.d/openwrt-dashboard
+#   /etc/init.d/openwrt-dashboard enable
+#
+# Not: Bu servis çıktıyı /dev/console'a yazar. HDMI'da "açılır açılmaz"
+# otomatik başlatma için install.sh'in kiosk modunu (inittab) tercih edin.
+
+START=99
+STOP=10
+USE_PROCD=1
+
+DASHBOARD_DIR="/root/openwrt-dashboard"
+DASHBOARD_BIN="${DASHBOARD_DIR}/dashboard.py"
+
+start_service() {
+    procd_open_instance
+
+    procd_set_param command /usr/bin/python3
+    procd_set_param param "$DASHBOARD_BIN"
+    procd_set_param respawn 3 10 5
+
+    # NOT: kernel konsolu 16 renktir; truecolor GÖNDERME (mor gibi görünür).
+    procd_set_param env TERM="linux"
+    procd_set_param stdout /dev/console
+    procd_set_param stderr /dev/console
+
+    procd_close_instance
+}
+
+reload_service() {
+    stop
+    start
+}

@@ -1,0 +1,9 @@
+{
+  "refresh_interval": 1.0,
+  "graph_points": 90,
+  "log_lines": 20,
+  "wan_interface": "wan",
+  "wifi_interfaces": ["wlan0", "wlan1"],
+  "ping_hosts": ["1.1.1.1", "8.8.8.8"],
+  "show_emmc": true
+}
